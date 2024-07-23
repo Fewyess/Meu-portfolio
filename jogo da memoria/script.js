@@ -49,5 +49,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
         [hasFlippedCard, lockBoard] = [false, false];
         [firstCard, secondCard] = [null, null];
     }
+
+
+(function suffle(){
+    cards.forEach((card) =>{
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+})();
+
+cards.forEach((card)=> card.addEventListener("click", flipCard));
+
 });
    
